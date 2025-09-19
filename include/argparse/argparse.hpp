@@ -101,6 +101,7 @@ namespace argparse {
                     return std::string{ value };
                 }
             }
+            return "error";
 #endif
         } else if constexpr (has_ostream_operator<T>::value) {
             return static_cast<std::ostringstream &&>((std::ostringstream() << std::boolalpha << v)).str();       // https://github.com/stan-dev/math/issues/590#issuecomment-550122627
